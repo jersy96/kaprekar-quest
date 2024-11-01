@@ -32,7 +32,7 @@ class IterationCountingPage extends StatelessWidget {
                 ),
                 if (!state.iterations.isEmpty())
                   Expanded(
-                    child: Column(
+                    child: ListView(
                       children: state.iterations.asList().asMap().entries.map(
                         (entry) {
                           int index = entry.key + 1;

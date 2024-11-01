@@ -24,7 +24,12 @@ class IterationCountingBloc
       Seed seed = Seed(intSeed);
       emit(state.copyWith(seed: seed, iterations: _iterationsFromSeed(seed)));
     } catch (_) {
-      emit(state.copyWith(seed: Seed.empty()));
+      emit(
+        state.copyWith(
+          seed: Seed.empty(),
+          iterations: const KtList.empty(),
+        ),
+      );
     }
   }
 
@@ -48,7 +53,8 @@ class IterationCountingBloc
           });
         } while (lastIteration.isValid() &&
             newIteration.isValid() &&
-            lastIteration != newIteration);
+            lastIteration != newIteration &&
+            iterations.length <= 100);
         return iterations.toImmutableList();
       },
     );
