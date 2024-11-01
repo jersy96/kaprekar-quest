@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kaprekar_quest/presentation/core/home_page.dart';
+import 'package:kaprekar_quest/presentation/iteration_counting/iteration_counting_page.dart';
 
 class KaprekarQuestApp extends StatelessWidget {
   const KaprekarQuestApp({super.key});
@@ -9,7 +9,7 @@ class KaprekarQuestApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Kaprekar Quest',
-      home: HomePage(),
+      home: IterationCountingPage(),
     );
   }
 }
