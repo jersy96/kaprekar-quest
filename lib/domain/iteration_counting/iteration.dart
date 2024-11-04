@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:kaprekar_quest/domain/core/value_failure.dart';
 import 'package:kaprekar_quest/domain/core/value_object.dart';
+import 'package:kaprekar_quest/domain/iteration_counting/max_iterations.dart';
 import 'package:kaprekar_quest/domain/iteration_counting/seed.dart';
 import 'package:kt_dart/collection.dart';
 
@@ -32,6 +33,36 @@ class Iteration extends ValueObject<KtMap<String, int>> {
           'subtrahend': subtrahend,
           'difference': difference,
         }.toImmutableMap());
+      },
+    );
+  }
+
+  static KtList<Iteration> listFromSeed(
+    Seed seed,
+    MaxIterations maxIterations,
+  ) {
+    return seed.value.fold(
+      (_) => const KtList.empty(),
+      (int seedValue) {
+        List<Iteration> iterations = [];
+        Iteration firstIteration = Iteration.fromSeed(seed);
+        iterations.add(firstIteration);
+
+        Iteration lastIteration;
+        Iteration newIteration = Iteration.empty();
+        do {
+          lastIteration = iterations.last;
+          lastIteration.value.fold((f) {}, (iteration) {
+            newIteration = Iteration.fromSeed(
+              Seed(iteration['difference']!),
+            );
+            iterations.add(newIteration);
+          });
+        } while (lastIteration.isValid() &&
+            newIteration.isValid() &&
+            lastIteration != newIteration &&
+            iterations.length < maxIterations.value.getOrElse(() => 100));
+        return iterations.toImmutableList();
       },
     );
   }

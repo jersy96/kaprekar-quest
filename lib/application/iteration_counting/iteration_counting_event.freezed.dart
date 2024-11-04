@@ -19,32 +19,39 @@ mixin _$IterationCountingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() seedChanged,
+    required TResult Function() maxIterationsChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? seedChanged,
+    TResult? Function()? maxIterationsChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? seedChanged,
+    TResult Function()? maxIterationsChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(SeedChangedEvent value) seedChanged,
+    required TResult Function(MaxIterationsChangedEvent value)
+        maxIterationsChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SeedChangedEvent value)? seedChanged,
+    TResult? Function(MaxIterationsChangedEvent value)? maxIterationsChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SeedChangedEvent value)? seedChanged,
+    TResult Function(MaxIterationsChangedEvent value)? maxIterationsChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +121,7 @@ class _$SeedChangedEventImpl implements SeedChangedEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() seedChanged,
+    required TResult Function() maxIterationsChanged,
   }) {
     return seedChanged();
   }
@@ -122,6 +130,7 @@ class _$SeedChangedEventImpl implements SeedChangedEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? seedChanged,
+    TResult? Function()? maxIterationsChanged,
   }) {
     return seedChanged?.call();
   }
@@ -130,6 +139,7 @@ class _$SeedChangedEventImpl implements SeedChangedEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? seedChanged,
+    TResult Function()? maxIterationsChanged,
     required TResult orElse(),
   }) {
     if (seedChanged != null) {
@@ -142,6 +152,8 @@ class _$SeedChangedEventImpl implements SeedChangedEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(SeedChangedEvent value) seedChanged,
+    required TResult Function(MaxIterationsChangedEvent value)
+        maxIterationsChanged,
   }) {
     return seedChanged(this);
   }
@@ -150,6 +162,7 @@ class _$SeedChangedEventImpl implements SeedChangedEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SeedChangedEvent value)? seedChanged,
+    TResult? Function(MaxIterationsChangedEvent value)? maxIterationsChanged,
   }) {
     return seedChanged?.call(this);
   }
@@ -158,6 +171,7 @@ class _$SeedChangedEventImpl implements SeedChangedEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SeedChangedEvent value)? seedChanged,
+    TResult Function(MaxIterationsChangedEvent value)? maxIterationsChanged,
     required TResult orElse(),
   }) {
     if (seedChanged != null) {
@@ -169,4 +183,114 @@ class _$SeedChangedEventImpl implements SeedChangedEvent {
 
 abstract class SeedChangedEvent implements IterationCountingEvent {
   const factory SeedChangedEvent() = _$SeedChangedEventImpl;
+}
+
+/// @nodoc
+abstract class _$$MaxIterationsChangedEventImplCopyWith<$Res> {
+  factory _$$MaxIterationsChangedEventImplCopyWith(
+          _$MaxIterationsChangedEventImpl value,
+          $Res Function(_$MaxIterationsChangedEventImpl) then) =
+      __$$MaxIterationsChangedEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MaxIterationsChangedEventImplCopyWithImpl<$Res>
+    extends _$IterationCountingEventCopyWithImpl<$Res,
+        _$MaxIterationsChangedEventImpl>
+    implements _$$MaxIterationsChangedEventImplCopyWith<$Res> {
+  __$$MaxIterationsChangedEventImplCopyWithImpl(
+      _$MaxIterationsChangedEventImpl _value,
+      $Res Function(_$MaxIterationsChangedEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of IterationCountingEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$MaxIterationsChangedEventImpl implements MaxIterationsChangedEvent {
+  const _$MaxIterationsChangedEventImpl();
+
+  @override
+  String toString() {
+    return 'IterationCountingEvent.maxIterationsChanged()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MaxIterationsChangedEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() seedChanged,
+    required TResult Function() maxIterationsChanged,
+  }) {
+    return maxIterationsChanged();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? seedChanged,
+    TResult? Function()? maxIterationsChanged,
+  }) {
+    return maxIterationsChanged?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? seedChanged,
+    TResult Function()? maxIterationsChanged,
+    required TResult orElse(),
+  }) {
+    if (maxIterationsChanged != null) {
+      return maxIterationsChanged();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SeedChangedEvent value) seedChanged,
+    required TResult Function(MaxIterationsChangedEvent value)
+        maxIterationsChanged,
+  }) {
+    return maxIterationsChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SeedChangedEvent value)? seedChanged,
+    TResult? Function(MaxIterationsChangedEvent value)? maxIterationsChanged,
+  }) {
+    return maxIterationsChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SeedChangedEvent value)? seedChanged,
+    TResult Function(MaxIterationsChangedEvent value)? maxIterationsChanged,
+    required TResult orElse(),
+  }) {
+    if (maxIterationsChanged != null) {
+      return maxIterationsChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MaxIterationsChangedEvent implements IterationCountingEvent {
+  const factory MaxIterationsChangedEvent() = _$MaxIterationsChangedEventImpl;
 }

@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kaprekar_quest/application/core/text_editing_controller_manager.dart';
 import 'package:kaprekar_quest/domain/iteration_counting/iteration.dart';
+import 'package:kaprekar_quest/domain/iteration_counting/max_iterations.dart';
 import 'package:kaprekar_quest/domain/iteration_counting/seed.dart';
 import 'package:kt_dart/kt.dart';
 
@@ -14,6 +15,7 @@ abstract class IterationCountingState with _$IterationCountingState {
     required Seed seed,
     required TextEditingControllerManager textControllerManager,
     required KtList<Iteration> iterations,
+    required MaxIterations maxIterations,
   }) = _IterationCountingState;
 
   factory IterationCountingState.initial() {
@@ -21,6 +23,7 @@ abstract class IterationCountingState with _$IterationCountingState {
       seed: Seed.empty(),
       textControllerManager: TextEditingControllerManager({}),
       iterations: const KtList.empty(),
+      maxIterations: MaxIterations.defaultMax(),
     );
   }
 }

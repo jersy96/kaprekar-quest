@@ -8,4 +8,6 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
       InvalidSeed<T>;
   const factory ValueFailure.invalidIteration({required T failedValue}) =
       InvalidIteration<T>;
+  const factory ValueFailure.invalidMaxInterations({required T failedValue}) =
+      InvalidMaxIterations<T>;
 }

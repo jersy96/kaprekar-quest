@@ -21,18 +21,21 @@ mixin _$ValueFailure<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidSeed,
     required TResult Function(T failedValue) invalidIteration,
+    required TResult Function(T failedValue) invalidMaxInterations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidSeed,
     TResult? Function(T failedValue)? invalidIteration,
+    TResult? Function(T failedValue)? invalidMaxInterations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidSeed,
     TResult Function(T failedValue)? invalidIteration,
+    TResult Function(T failedValue)? invalidMaxInterations,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +43,22 @@ mixin _$ValueFailure<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidSeed<T> value) invalidSeed,
     required TResult Function(InvalidIteration<T> value) invalidIteration,
+    required TResult Function(InvalidMaxIterations<T> value)
+        invalidMaxInterations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidSeed<T> value)? invalidSeed,
     TResult? Function(InvalidIteration<T> value)? invalidIteration,
+    TResult? Function(InvalidMaxIterations<T> value)? invalidMaxInterations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidSeed<T> value)? invalidSeed,
     TResult Function(InvalidIteration<T> value)? invalidIteration,
+    TResult Function(InvalidMaxIterations<T> value)? invalidMaxInterations,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -173,6 +180,7 @@ class _$InvalidSeedImpl<T> implements InvalidSeed<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidSeed,
     required TResult Function(T failedValue) invalidIteration,
+    required TResult Function(T failedValue) invalidMaxInterations,
   }) {
     return invalidSeed(failedValue);
   }
@@ -182,6 +190,7 @@ class _$InvalidSeedImpl<T> implements InvalidSeed<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidSeed,
     TResult? Function(T failedValue)? invalidIteration,
+    TResult? Function(T failedValue)? invalidMaxInterations,
   }) {
     return invalidSeed?.call(failedValue);
   }
@@ -191,6 +200,7 @@ class _$InvalidSeedImpl<T> implements InvalidSeed<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidSeed,
     TResult Function(T failedValue)? invalidIteration,
+    TResult Function(T failedValue)? invalidMaxInterations,
     required TResult orElse(),
   }) {
     if (invalidSeed != null) {
@@ -204,6 +214,8 @@ class _$InvalidSeedImpl<T> implements InvalidSeed<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidSeed<T> value) invalidSeed,
     required TResult Function(InvalidIteration<T> value) invalidIteration,
+    required TResult Function(InvalidMaxIterations<T> value)
+        invalidMaxInterations,
   }) {
     return invalidSeed(this);
   }
@@ -213,6 +225,7 @@ class _$InvalidSeedImpl<T> implements InvalidSeed<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidSeed<T> value)? invalidSeed,
     TResult? Function(InvalidIteration<T> value)? invalidIteration,
+    TResult? Function(InvalidMaxIterations<T> value)? invalidMaxInterations,
   }) {
     return invalidSeed?.call(this);
   }
@@ -222,6 +235,7 @@ class _$InvalidSeedImpl<T> implements InvalidSeed<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidSeed<T> value)? invalidSeed,
     TResult Function(InvalidIteration<T> value)? invalidIteration,
+    TResult Function(InvalidMaxIterations<T> value)? invalidMaxInterations,
     required TResult orElse(),
   }) {
     if (invalidSeed != null) {
@@ -321,6 +335,7 @@ class _$InvalidIterationImpl<T> implements InvalidIteration<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidSeed,
     required TResult Function(T failedValue) invalidIteration,
+    required TResult Function(T failedValue) invalidMaxInterations,
   }) {
     return invalidIteration(failedValue);
   }
@@ -330,6 +345,7 @@ class _$InvalidIterationImpl<T> implements InvalidIteration<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidSeed,
     TResult? Function(T failedValue)? invalidIteration,
+    TResult? Function(T failedValue)? invalidMaxInterations,
   }) {
     return invalidIteration?.call(failedValue);
   }
@@ -339,6 +355,7 @@ class _$InvalidIterationImpl<T> implements InvalidIteration<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidSeed,
     TResult Function(T failedValue)? invalidIteration,
+    TResult Function(T failedValue)? invalidMaxInterations,
     required TResult orElse(),
   }) {
     if (invalidIteration != null) {
@@ -352,6 +369,8 @@ class _$InvalidIterationImpl<T> implements InvalidIteration<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidSeed<T> value) invalidSeed,
     required TResult Function(InvalidIteration<T> value) invalidIteration,
+    required TResult Function(InvalidMaxIterations<T> value)
+        invalidMaxInterations,
   }) {
     return invalidIteration(this);
   }
@@ -361,6 +380,7 @@ class _$InvalidIterationImpl<T> implements InvalidIteration<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidSeed<T> value)? invalidSeed,
     TResult? Function(InvalidIteration<T> value)? invalidIteration,
+    TResult? Function(InvalidMaxIterations<T> value)? invalidMaxInterations,
   }) {
     return invalidIteration?.call(this);
   }
@@ -370,6 +390,7 @@ class _$InvalidIterationImpl<T> implements InvalidIteration<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidSeed<T> value)? invalidSeed,
     TResult Function(InvalidIteration<T> value)? invalidIteration,
+    TResult Function(InvalidMaxIterations<T> value)? invalidMaxInterations,
     required TResult orElse(),
   }) {
     if (invalidIteration != null) {
@@ -392,4 +413,160 @@ abstract class InvalidIteration<T> implements ValueFailure<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InvalidIterationImplCopyWith<T, _$InvalidIterationImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidMaxIterationsImplCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$InvalidMaxIterationsImplCopyWith(
+          _$InvalidMaxIterationsImpl<T> value,
+          $Res Function(_$InvalidMaxIterationsImpl<T>) then) =
+      __$$InvalidMaxIterationsImplCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidMaxIterationsImplCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidMaxIterationsImpl<T>>
+    implements _$$InvalidMaxIterationsImplCopyWith<T, $Res> {
+  __$$InvalidMaxIterationsImplCopyWithImpl(_$InvalidMaxIterationsImpl<T> _value,
+      $Res Function(_$InvalidMaxIterationsImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ValueFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidMaxIterationsImpl<T>(
+      failedValue: freezed == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidMaxIterationsImpl<T> implements InvalidMaxIterations<T> {
+  const _$InvalidMaxIterationsImpl({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidMaxInterations(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidMaxIterationsImpl<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  /// Create a copy of ValueFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InvalidMaxIterationsImplCopyWith<T, _$InvalidMaxIterationsImpl<T>>
+      get copyWith => __$$InvalidMaxIterationsImplCopyWithImpl<T,
+          _$InvalidMaxIterationsImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidSeed,
+    required TResult Function(T failedValue) invalidIteration,
+    required TResult Function(T failedValue) invalidMaxInterations,
+  }) {
+    return invalidMaxInterations(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T failedValue)? invalidSeed,
+    TResult? Function(T failedValue)? invalidIteration,
+    TResult? Function(T failedValue)? invalidMaxInterations,
+  }) {
+    return invalidMaxInterations?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidSeed,
+    TResult Function(T failedValue)? invalidIteration,
+    TResult Function(T failedValue)? invalidMaxInterations,
+    required TResult orElse(),
+  }) {
+    if (invalidMaxInterations != null) {
+      return invalidMaxInterations(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidSeed<T> value) invalidSeed,
+    required TResult Function(InvalidIteration<T> value) invalidIteration,
+    required TResult Function(InvalidMaxIterations<T> value)
+        invalidMaxInterations,
+  }) {
+    return invalidMaxInterations(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InvalidSeed<T> value)? invalidSeed,
+    TResult? Function(InvalidIteration<T> value)? invalidIteration,
+    TResult? Function(InvalidMaxIterations<T> value)? invalidMaxInterations,
+  }) {
+    return invalidMaxInterations?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidSeed<T> value)? invalidSeed,
+    TResult Function(InvalidIteration<T> value)? invalidIteration,
+    TResult Function(InvalidMaxIterations<T> value)? invalidMaxInterations,
+    required TResult orElse(),
+  }) {
+    if (invalidMaxInterations != null) {
+      return invalidMaxInterations(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidMaxIterations<T> implements ValueFailure<T> {
+  const factory InvalidMaxIterations({required final T failedValue}) =
+      _$InvalidMaxIterationsImpl<T>;
+
+  @override
+  T get failedValue;
+
+  /// Create a copy of ValueFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InvalidMaxIterationsImplCopyWith<T, _$InvalidMaxIterationsImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

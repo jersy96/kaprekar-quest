@@ -20,6 +20,7 @@ mixin _$IterationCountingState {
   TextEditingControllerManager get textControllerManager =>
       throw _privateConstructorUsedError;
   KtList<Iteration> get iterations => throw _privateConstructorUsedError;
+  MaxIterations get maxIterations => throw _privateConstructorUsedError;
 
   /// Create a copy of IterationCountingState
   /// with the given fields replaced by the non-null parameter values.
@@ -37,7 +38,8 @@ abstract class $IterationCountingStateCopyWith<$Res> {
   $Res call(
       {Seed seed,
       TextEditingControllerManager textControllerManager,
-      KtList<Iteration> iterations});
+      KtList<Iteration> iterations,
+      MaxIterations maxIterations});
 }
 
 /// @nodoc
@@ -59,6 +61,7 @@ class _$IterationCountingStateCopyWithImpl<$Res,
     Object? seed = null,
     Object? textControllerManager = null,
     Object? iterations = null,
+    Object? maxIterations = null,
   }) {
     return _then(_value.copyWith(
       seed: null == seed
@@ -73,6 +76,10 @@ class _$IterationCountingStateCopyWithImpl<$Res,
           ? _value.iterations
           : iterations // ignore: cast_nullable_to_non_nullable
               as KtList<Iteration>,
+      maxIterations: null == maxIterations
+          ? _value.maxIterations
+          : maxIterations // ignore: cast_nullable_to_non_nullable
+              as MaxIterations,
     ) as $Val);
   }
 }
@@ -89,7 +96,8 @@ abstract class _$$IterationCountingStateImplCopyWith<$Res>
   $Res call(
       {Seed seed,
       TextEditingControllerManager textControllerManager,
-      KtList<Iteration> iterations});
+      KtList<Iteration> iterations,
+      MaxIterations maxIterations});
 }
 
 /// @nodoc
@@ -110,6 +118,7 @@ class __$$IterationCountingStateImplCopyWithImpl<$Res>
     Object? seed = null,
     Object? textControllerManager = null,
     Object? iterations = null,
+    Object? maxIterations = null,
   }) {
     return _then(_$IterationCountingStateImpl(
       seed: null == seed
@@ -124,6 +133,10 @@ class __$$IterationCountingStateImplCopyWithImpl<$Res>
           ? _value.iterations
           : iterations // ignore: cast_nullable_to_non_nullable
               as KtList<Iteration>,
+      maxIterations: null == maxIterations
+          ? _value.maxIterations
+          : maxIterations // ignore: cast_nullable_to_non_nullable
+              as MaxIterations,
     ));
   }
 }
@@ -134,7 +147,8 @@ class _$IterationCountingStateImpl extends _IterationCountingState {
   const _$IterationCountingStateImpl(
       {required this.seed,
       required this.textControllerManager,
-      required this.iterations})
+      required this.iterations,
+      required this.maxIterations})
       : super._();
 
   @override
@@ -143,10 +157,12 @@ class _$IterationCountingStateImpl extends _IterationCountingState {
   final TextEditingControllerManager textControllerManager;
   @override
   final KtList<Iteration> iterations;
+  @override
+  final MaxIterations maxIterations;
 
   @override
   String toString() {
-    return 'IterationCountingState(seed: $seed, textControllerManager: $textControllerManager, iterations: $iterations)';
+    return 'IterationCountingState(seed: $seed, textControllerManager: $textControllerManager, iterations: $iterations, maxIterations: $maxIterations)';
   }
 
   @override
@@ -158,12 +174,14 @@ class _$IterationCountingStateImpl extends _IterationCountingState {
             (identical(other.textControllerManager, textControllerManager) ||
                 other.textControllerManager == textControllerManager) &&
             (identical(other.iterations, iterations) ||
-                other.iterations == iterations));
+                other.iterations == iterations) &&
+            (identical(other.maxIterations, maxIterations) ||
+                other.maxIterations == maxIterations));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, seed, textControllerManager, iterations);
+  int get hashCode => Object.hash(
+      runtimeType, seed, textControllerManager, iterations, maxIterations);
 
   /// Create a copy of IterationCountingState
   /// with the given fields replaced by the non-null parameter values.
@@ -179,7 +197,8 @@ abstract class _IterationCountingState extends IterationCountingState {
   const factory _IterationCountingState(
           {required final Seed seed,
           required final TextEditingControllerManager textControllerManager,
-          required final KtList<Iteration> iterations}) =
+          required final KtList<Iteration> iterations,
+          required final MaxIterations maxIterations}) =
       _$IterationCountingStateImpl;
   const _IterationCountingState._() : super._();
 
@@ -189,6 +208,8 @@ abstract class _IterationCountingState extends IterationCountingState {
   TextEditingControllerManager get textControllerManager;
   @override
   KtList<Iteration> get iterations;
+  @override
+  MaxIterations get maxIterations;
 
   /// Create a copy of IterationCountingState
   /// with the given fields replaced by the non-null parameter values.
