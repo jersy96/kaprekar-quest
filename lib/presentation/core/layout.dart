@@ -10,9 +10,11 @@ class Layout extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Kaprekar Quest',
-      home: Scaffold(
-        body: Center(
-          child: child,
+      home: SelectionArea(
+        child: Scaffold(
+          body: Center(
+            child: child,
+          ),
         ),
       ),
     );

@@ -14,43 +14,57 @@ class IterationCountingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final IterationCountingBloc bloc = getIt<IterationCountingBloc>();
-    return BlocProvider.value(
-      value: bloc,
-      child: BlocBuilder<IterationCountingBloc, IterationCountingState>(
-        builder: (context, state) {
-          return Layout(
-            child: Column(
-              children: [
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  controller: state.textControllerManager.getController('seed'),
-                  decoration: const InputDecoration(
-                    labelText: 'Número inicial',
-                    hintText: 'Ingresa un número',
+    return Layout(
+      child: Container(
+        constraints: const BoxConstraints(maxWidth: 800, minWidth: 300),
+        padding: const EdgeInsets.all(16),
+        child: BlocProvider.value(
+          value: bloc,
+          child: BlocBuilder<IterationCountingBloc, IterationCountingState>(
+            builder: (context, state) {
+              return Column(
+                children: [
+                  const Text(
+                    'Iteraciones de Kaprekar',
+                    style: TextStyle(fontSize: 24),
                   ),
-                  onChanged: (String value) {
-                    bloc.add(const IterationCountingEvent.seedChanged());
-                  },
-                ),
-                if (!state.iterations.isEmpty())
-                  Expanded(
-                    child: ListView(
-                      children: state.iterations.asList().asMap().entries.map(
-                        (entry) {
-                          int index = entry.key + 1;
-                          Iteration iteration = entry.value;
-                          return Text("$index) $iteration");
-                        },
-                      ).toList(),
+                  const SizedBox(height: 16),
+                  Container(
+                    constraints: const BoxConstraints(maxWidth: 260),
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
+                      controller:
+                          state.textControllerManager.getController('seed'),
+                      decoration: const InputDecoration(
+                        labelText: 'Número inicial',
+                        hintText: 'Ingresa un número',
+                      ),
+                      onChanged: (String value) {
+                        bloc.add(const IterationCountingEvent.seedChanged());
+                      },
                     ),
                   ),
-              ],
-            ),
-          );
-        },
+                  if (!state.iterations.isEmpty()) const SizedBox(height: 16),
+                  if (!state.iterations.isEmpty())
+                    Expanded(
+                      child: ListView(
+                        children: state.iterations.asList().asMap().entries.map(
+                          (entry) {
+                            int index = entry.key + 1;
+                            Iteration iteration = entry.value;
+                            return Center(child: Text("$index) $iteration"));
+                          },
+                        ).toList(),
+                      ),
+                    ),
+                ],
+              );
+            },
+          ),
+        ),
       ),
     );
   }
