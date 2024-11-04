@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kaprekar_quest/application/injection/injection_container.dart';
 import 'package:kaprekar_quest/application/iteration_counting/iteration_counting_bloc.dart';
@@ -20,11 +21,15 @@ class IterationCountingPage extends StatelessWidget {
           return Layout(
             child: Column(
               children: [
-                const Text('Holaaa'),
                 TextFormField(
+                  keyboardType: TextInputType.number,
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
                   controller: state.textControllerManager.getController('seed'),
                   decoration: const InputDecoration(
-                    labelText: 'Enter a number',
+                    labelText: 'Número inicial',
+                    hintText: 'Ingresa un número',
                   ),
                   onChanged: (String value) {
                     bloc.add(const IterationCountingEvent.seedChanged());
