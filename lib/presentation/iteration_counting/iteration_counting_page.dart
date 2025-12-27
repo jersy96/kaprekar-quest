@@ -14,9 +14,19 @@ class IterationCountingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const Layout(
+      child: IterationCountingPageContent(),
+    );
+  }
+}
+
+class IterationCountingPageContent extends StatelessWidget {
+  const IterationCountingPageContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     final IterationCountingBloc bloc = getIt<IterationCountingBloc>();
-    return Layout(
-      child: Container(
+    return Container(
         constraints: const BoxConstraints(maxWidth: 800, minWidth: 300),
         padding: const EdgeInsets.all(16),
         child: BlocProvider.value(
@@ -94,7 +104,6 @@ class IterationCountingPage extends StatelessWidget {
             },
           ),
         ),
-      ),
-    );
+      );
   }
 }
