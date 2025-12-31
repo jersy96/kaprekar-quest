@@ -106,7 +106,7 @@ class _EncryptorPageState extends State<EncryptorPage> {
               child: ExpansionTile(
                 title: const Text('Configuración'),
                 subtitle: Text(
-                  'Desplazamiento: ${_shiftController.text} | Alfabeto: ${_alphabetController.text.length} caracteres',
+                  'Índice de rotación: ${_shiftController.text} | Conjunto base: ${_alphabetController.text.length} caracteres',
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
                 leading: const Icon(Icons.settings),
@@ -125,8 +125,8 @@ class _EncryptorPageState extends State<EncryptorPage> {
                               FilteringTextInputFormatter.digitsOnly,
                             ],
                             decoration: const InputDecoration(
-                              labelText: 'Desplazamiento',
-                              hintText: 'Número de posiciones a desplazar',
+                              labelText: 'Índice de rotación',
+                              hintText: 'Número de posiciones a rotar',
                               border: OutlineInputBorder(),
                             ),
                           ),
@@ -138,8 +138,8 @@ class _EncryptorPageState extends State<EncryptorPage> {
                               child: TextFormField(
                                 controller: _alphabetController,
                                 decoration: const InputDecoration(
-                                  labelText: 'Alfabeto',
-                                  hintText: 'Caracteres del alfabeto',
+                                  labelText: 'Conjunto base',
+                                  hintText: 'Caracteres del conjunto',
                                   border: OutlineInputBorder(),
                                 ),
                               ),
@@ -215,10 +215,10 @@ class _EncryptorPageState extends State<EncryptorPage> {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '• Se desplaza cada letra N posiciones en el alfabeto.\n'
-                    '• Por defecto se usa un desplazamiento de 3 posiciones.\n'
-                    '• Los caracteres que no estén en el alfabeto se mantienen igual.\n'
-                    '• Puedes personalizar el alfabeto para incluir otros caracteres.',
+                    '• Se rota cada letra N posiciones en el conjunto base.\n'
+                    '• Por defecto se usa un índice de rotación de 3.\n'
+                    '• Los caracteres que no estén en el conjunto se mantienen igual.\n'
+                    '• Puedes personalizar el conjunto base para incluir otros caracteres.',
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.onPrimaryContainer,
                     ),
